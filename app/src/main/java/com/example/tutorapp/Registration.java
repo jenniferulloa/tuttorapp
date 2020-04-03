@@ -32,7 +32,7 @@ import java.util.Objects;
 public class Registration extends AppCompatActivity {
 
     public static final String TAG = "Tag";
-    EditText FullName, Email, Password;
+    EditText FirstName,LastName,Username, Email, Password,ZipCode,PhoneNumber;
     CheckBox Tutor,Student;
     Button RegisterButton, LoginButton;
     FirebaseAuth fAuth;
@@ -47,7 +47,11 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        FullName = findViewById(R.id.FullName);
+        FirstName = findViewById(R.id.FirstName);
+        LastName = findViewById(R.id.LastName);
+        Username = findViewById(R.id.Username);
+        ZipCode = findViewById(R.id.ZipCode);
+        PhoneNumber = findViewById(R.id.PhoneNumber);
         Email = findViewById(R.id.Email);
         Password = findViewById(R.id.Password);
         Tutor = findViewById(R.id.Tutor);
@@ -69,8 +73,11 @@ public class Registration extends AppCompatActivity {
             public void onClick(View v) {
                 final String email = Email.getText().toString().trim();
                 String password = Password.getText().toString().trim();
-                final String fullname = FullName.getText().toString();
-
+                final String firstname = FirstName.getText().toString();
+                final String lastname = LastName.getText().toString();
+                final String zipcode = ZipCode.getText().toString();
+                final String phonenumber = PhoneNumber.getText().toString();
+                final String username = Username.getText().toString();
                 if (TextUtils.isEmpty(email)) {
                     Email.setError("Email is Required");
                     return;
@@ -94,13 +101,18 @@ public class Registration extends AppCompatActivity {
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                            user.put("fName",fullname);
+                            user.put("fName",firstname);
+                            user.put("LName",lastname);
                             user.put("email",email);
+                            user.put("username",username);
+                            user.put("zipcode",zipcode);
+                            user.put("phone", phonenumber);
+
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(Registration.TAG, "onSuccess: user Profile is created for "+ userID);
-
+                                    startActivity(new Intent(Registration.this,MainActivity.class));//id registered they will be sent to homepage
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
