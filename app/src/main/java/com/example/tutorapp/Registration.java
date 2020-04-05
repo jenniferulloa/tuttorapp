@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -34,11 +35,12 @@ public class Registration extends AppCompatActivity {
     public static final String TAG = "Tag";
     EditText FirstName,LastName,Username, Email, Password,ZipCode,PhoneNumber;
     CheckBox Tutor,Student;
-    Button RegisterButton, LoginButton;
+    Button RegisterButton;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     String userID;
     FirebaseFirestore fStore;
+    TextView LoginButton;
 
 
 

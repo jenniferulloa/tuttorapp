@@ -3,6 +3,7 @@
     <words>
       <w>firstname</w>
       <w>lastname</w>
+      <w>passwordresetdialog</w>
       <w>phonenumber</w>
       <w>zipcode</w>
     </words>
