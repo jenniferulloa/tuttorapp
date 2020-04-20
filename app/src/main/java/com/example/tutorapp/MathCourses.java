@@ -41,6 +41,13 @@ public class MathCourses extends AppCompatActivity {
             }
         });
 
+        Calculus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MathCourses.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
