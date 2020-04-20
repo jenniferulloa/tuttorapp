@@ -1,10 +1,5 @@
 package com.example.tutorapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,9 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -103,41 +99,30 @@ public class Login extends AppCompatActivity {
         ForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final EditText resetEmail = new EditText(v.getContext());
-                final AlertDialog.Builder passwordresetdialog = new AlertDialog.Builder(v.getContext());
-                passwordresetdialog.setTitle("Reset Password: ");
-                passwordresetdialog.setMessage("Enter Your Email to receive reset link: ");
-                passwordresetdialog.setView(resetEmail);
-
-                passwordresetdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //extract email and reset link
-                        String mail = resetEmail.getText().toString();
-                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(Login.this,"Reset Link sent to your email",Toast.LENGTH_SHORT).show();
-                                attempt = 0;
+                String email = Email.getText().toString();
+                if(TextUtils.isEmpty(email))
+                {
+                    Toast.makeText(Login.this, "Please enter your email in the email box above ", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    fAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful())
+                            {
+                                Toast.makeText(Login.this, "Sucessful: Password reset instructions sent to your email",Toast.LENGTH_SHORT).show();
                             }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Login.this,"Error! Reset link not sent"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                            else
+                            {
+                                String message = task.getException().getMessage();
+                                Toast.makeText(Login.this,"Error! Reset link not sent "+message,Toast.LENGTH_SHORT).show();
 
                             }
-                        });
+                        }
+                    });
 
-                    }
-                });
-                passwordresetdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //close dialog
-                        passwordresetdialog.create().show();
-                    }
-                });
+                }
             }
         });
 

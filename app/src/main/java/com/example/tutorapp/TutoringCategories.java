@@ -1,15 +1,13 @@
 package com.example.tutorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-import android.content.Intent;
 
 
 public class TutoringCategories extends AppCompatActivity {
@@ -32,10 +30,7 @@ public class TutoringCategories extends AppCompatActivity {
         MathButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //display math courses
-                //click math course waned
-                openMathCourses();
-
+                //MathCourses();
             }
         });
         ScienceButton.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +39,6 @@ public class TutoringCategories extends AppCompatActivity {
                         //display math courses
                         //click math course waned
                         openScienceCourses();
-
                     }
                 });
         ForeignLanguageButtons.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +87,9 @@ public class TutoringCategories extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openMathCourses() {
+
+    public void MathCourses(View view) {
         Intent intent = new Intent(TutoringCategories.this, MathCourses.class);
         startActivity(intent);
     }
-
 }

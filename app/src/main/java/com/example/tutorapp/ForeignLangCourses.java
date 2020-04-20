@@ -1,56 +1,45 @@
 package com.example.tutorapp;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-
-import java.util.ArrayList;
-
 public class ForeignLangCourses extends AppCompatActivity {
-    ListView listView;
-    FirebaseDatabase firebase;
-    DatabaseReference dref;
-    ArrayList<Courses> list;
-    ArrayAdapter<Courses> adapter;
-    Courses courses;
-    @Override
+
+
+    TextView Arabic, French, English,Form;
+    Button Back_Button;
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foreign_lang_courses);
+        Arabic = findViewById(R.id.Arabic);
+        French = findViewById(R.id.French);
+        English = findViewById(R.id.English);
+        Form = findViewById(R.id.Form);
+        Back_Button = findViewById(R.id.Back_Button);
 
-        courses = new Courses();
-        listView = (ListView) findViewById(R.id.listView);
-        firebase = FirebaseDatabase.getInstance();
-        dref = firebase.getReference("Courses");
-        list = new ArrayList<>();
-        adapter = new ArrayAdapter<Courses>(this,R.layout.activity_foreign_lang_courses,list);
-        dref.addValueEventListener(new ValueEventListener() {
+        Back_Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds: dataSnapshot.getChildren()){
-                    courses = ds.getValue(Courses.class);
-                    list.add(courses);
-
-                }
-                listView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent(ForeignLangCourses.this, TutoringCategories.class);
+                startActivity(intent);
             }
         });
-    }
 
+        Form.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForeignLangCourses.this, Form.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 
 }

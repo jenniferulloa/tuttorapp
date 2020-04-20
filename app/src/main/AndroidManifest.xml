@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestPrepCourses"></activity>
+        <activity android:name=".Search_And_Find_Tutor"></activity>
+        <activity android:name=".Form" />
+        <activity android:name=".TestPrepCourses" />
         <activity android:name=".LanguageArtsCourses" />
         <activity android:name=".ForeignLangCourses" />
         <activity android:name=".ScienceCourses" />
