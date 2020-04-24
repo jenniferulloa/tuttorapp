@@ -87,7 +87,6 @@ public class TutoringCategories extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void MathCourses(View view) {
         Intent intent = new Intent(TutoringCategories.this, MathCourses.class);
         startActivity(intent);

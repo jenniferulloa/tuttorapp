@@ -6,21 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Search_And_Find_Tutor">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="419dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Search..."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
 
     <ListView
-        android:id="@+id/List_view"
+        android:id="@+id/listview"
         android:layout_width="409dp"
         android:layout_height="608dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,4 +17,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,33 @@ public class LanguageArtsCourses extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Elementary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(LanguageArtsCourses.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+
+            }
+        });
+        Secondary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LanguageArtsCourses.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+
+            }
+        });
+        High.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LanguageArtsCourses.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 }

@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MainActivity extends AppCompatActivity {
     TextView fullName,email;
-    Button TutoringCategoriesButton;
+    Button TutoringCategoriesButton,SearchTutor;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fullName = findViewById(R.id.profileName);
         email    = findViewById(R.id.profileEmail);
+        SearchTutor    = findViewById(R.id.SearchTutor);
         TutoringCategoriesButton = findViewById(R.id.TutoringCategoriesButton);
 
         fAuth = FirebaseAuth.getInstance();
@@ -54,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
                 email.setText(documentSnapshot.getString("email"));
             }
         });
+        SearchTutor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     public void logout(View view) {

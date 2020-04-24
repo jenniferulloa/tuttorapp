@@ -39,7 +39,24 @@ public class ScienceCourses extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Biology.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(ScienceCourses.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+
+            }
+        });
+        Chemistry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ScienceCourses.this, Search_And_Find_Tutor.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
