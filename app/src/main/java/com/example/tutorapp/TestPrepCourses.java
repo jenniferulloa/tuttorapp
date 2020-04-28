@@ -38,6 +38,33 @@ public class TestPrepCourses extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        SAT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(TestPrepCourses.this, Test_Prep_Tutors.class);
+                startActivity(intent);
+
+            }
+        });
+        ACT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(TestPrepCourses.this, Test_Prep_Tutors.class);
+                startActivity(intent);
+
+            }
+        });
+        MCAT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(TestPrepCourses.this, Test_Prep_Tutors.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 }

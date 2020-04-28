@@ -1,5 +1,34 @@
 <resources>
-    <string name="app_name">Tutor App</string>
+    <string name="app_name">Ace It!</string>
     <string name="ace_it">Ace It!</string>
     <string name="create_new_account">Create New Account</string>
+    <string name="search">Search</string>
+    <string name="payments">Payments</string>
+    <string name="discover">Discover</string>
+    <string name="paypal">PayPal</string>
+    <string name="visa">Visa</string>
+    <string name="paynow">Pay Now</string>
+    <string name="enternow">Enter now</string>
+    <string name="filtertitle">Filter based on tutor name,subject,topic,rating,cost,zip-code</string>
+    <string name="name">Name: </string>
+    <string name="subject">Subject:</string>
+    <string name="cost">Cost: </string>
+    <string name="rating">Rating: </string>
+    <string name="zipcode">Zip Code: </string>
+    <string name="tutors">AceIt:Tutors</string>
+    <string name="TextView">TextView</string>
+    <string name="profile">Profile</string>
+    <string name="math">Math</string>
+    <string name="forlang">Foreign Language</string>
+    <string name="Science">Science</string>
+    <string name="langart">Language Arts</string>
+    <string name="testprep">Test Prep</string>
+
+    <string name="filter">Search for Tutors</string>
+    <string name="filterhint">Click Here to Filter</string>
+    <string name="request">Request Tutor</string>
+    <string name="coderequest">Request Processing</string>
+    <string name="reqtxt">No tutoring request currently</string>
+    <string name="Newreq">Your Request is being Processing</string>
+
 </resources>

@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class TutoringCategories extends AppCompatActivity {
-    Button MathButton, ScienceButton, TestPrepButton, LanguageArtsButton, ForeignLanguageButtons;
+    Button mathButton, ScienceButton, TestPrepButton, LanguageArtsButton, ForeignLanguageButtons;
     FirebaseAuth fAuth;
 
     @Override
@@ -19,28 +19,30 @@ public class TutoringCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutoringcat);
 
-        MathButton = findViewById(R.id.MathButton);
         ScienceButton = findViewById(R.id.ScienceButton);
+        mathButton = (Button) findViewById(R.id.mathButton);
         ForeignLanguageButtons = findViewById(R.id.ForeignLanguageButton);
         LanguageArtsButton = findViewById(R.id.LanguageArtsButton);
         TestPrepButton = findViewById(R.id.TestPrepButton);
 
         fAuth = FirebaseAuth.getInstance();
 
-        MathButton.setOnClickListener(new View.OnClickListener() {
+        mathButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //MathCourses();
+                Intent intent = new Intent(TutoringCategories.this, Math_course.class);
+                startActivity(intent);
             }
         });
+
         ScienceButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //display math courses
-                        //click math course waned
-                        openScienceCourses();
-                    }
-                });
+            @Override
+            public void onClick(View v) {
+                //display math courses
+                //click math course waned
+                openScienceCourses();
+            }
+        });
         ForeignLanguageButtons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,9 +88,8 @@ public class TutoringCategories extends AppCompatActivity {
         Intent intent = new Intent(TutoringCategories.this, ScienceCourses.class);
         startActivity(intent);
     }
-
-    public void MathCourses(View view) {
-        Intent intent = new Intent(TutoringCategories.this, MathCourses.class);
+    private void openMathCourses() {
+        Intent intent = new Intent(TutoringCategories.this, Math_course.class);
         startActivity(intent);
     }
 }

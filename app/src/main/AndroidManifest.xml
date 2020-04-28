@@ -3,47 +3,50 @@
     package="com.example.tutorapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/aceitlogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SubjectSearch"></activity>
+        <activity android:name=".BecomeATutor" />
+        <activity android:name=".TutorItem" />
+        <activity android:name=".Subject_Search" />
+        <activity android:name=".ReviewATutor" />
+        <activity android:name=".RedeemPoint" />
+        <activity android:name=".Advertisement" />
+        <activity android:name=".WinPoints" />
+        <activity android:name=".BestRatedTutor" />
+        <activity android:name=".paid_tutor" />
+        <activity android:name=".MostRatedTutor" />
+        <activity android:name=".Communication" />
+        <activity android:name=".DiscoverActivity" />
+        <activity android:name=".PaymentDetails" />
+        <activity android:name=".search" />
+        <activity android:name=".PaymentsMain" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".PayPalActivity" />
+        <activity android:name=".DiscoverActivty" />
+        <activity android:name=".VisaActivity" />
+        <activity android:name=".Math_course" />
+        <activity android:name=".Test_Prep_Tutors" />
+        <activity android:name=".Science_Tutors" />
+        <activity android:name=".Foreign_Language_Tutors" />
+        <activity android:name=".Language_Arts_Tutors" />
         <activity android:name=".Form" />
         <activity android:name=".TestPrepCourses" />
         <activity android:name=".LanguageArtsCourses" />
         <activity android:name=".ForeignLangCourses" />
         <activity android:name=".ScienceCourses" />
-        <activity android:name=".MathCourses">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".TutoringCategories">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Registration">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Math_Tutors" />
+        <activity android:name=".Login" />
+        <activity android:name=".TutoringCategories" />
+        <activity android:name=".Registration" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,14 +58,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-        <activity android:name=".ItemsPreviewActivity"></activity>
-        <activity android:name=".Search_And_Find_Tutor">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>
     </application>
 
 </manifest>

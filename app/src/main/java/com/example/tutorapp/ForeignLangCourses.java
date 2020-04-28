@@ -39,6 +39,27 @@ public class ForeignLangCourses extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Arabic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForeignLangCourses.this, Foreign_Language_Tutors.class);
+                startActivity(intent);
+            }
+        });
+        French.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForeignLangCourses.this, Foreign_Language_Tutors.class);
+                startActivity(intent);
+            }
+        });
+        English.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForeignLangCourses.this, Foreign_Language_Tutors.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

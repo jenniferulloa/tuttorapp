@@ -42,7 +42,7 @@ public class LanguageArtsCourses extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LanguageArtsCourses.this, Search_And_Find_Tutor.class);
+                Intent intent = new Intent(LanguageArtsCourses.this, Language_Arts_Tutors.class);
                 startActivity(intent);
 
             }
@@ -51,7 +51,7 @@ public class LanguageArtsCourses extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LanguageArtsCourses.this, Search_And_Find_Tutor.class);
+                Intent intent = new Intent(LanguageArtsCourses.this, Language_Arts_Tutors.class);
                 startActivity(intent);
 
             }
@@ -60,7 +60,7 @@ public class LanguageArtsCourses extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LanguageArtsCourses.this, Search_And_Find_Tutor.class);
+                Intent intent = new Intent(LanguageArtsCourses.this, Language_Arts_Tutors.class);
                 startActivity(intent);
 
             }

@@ -43,7 +43,7 @@ public class ScienceCourses extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(ScienceCourses.this, Search_And_Find_Tutor.class);
+                Intent intent = new Intent(ScienceCourses.this, Science_Tutors.class);
                 startActivity(intent);
 
             }
@@ -52,7 +52,16 @@ public class ScienceCourses extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(ScienceCourses.this, Search_And_Find_Tutor.class);
+                Intent intent = new Intent(ScienceCourses.this, Science_Tutors.class);
+                startActivity(intent);
+
+            }
+        });
+        Physics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ScienceCourses.this, Science_Tutors.class);
                 startActivity(intent);
 
             }

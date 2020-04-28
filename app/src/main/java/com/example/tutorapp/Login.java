@@ -32,7 +32,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Email = findViewById(R.id.Email);
-        Username = findViewById(R.id.Username);
         Password = findViewById(R.id.Password);
         LoginButton = findViewById(R.id.LoginButton);
         progressBar = findViewById(R.id.progressBar);
@@ -46,14 +45,9 @@ public class Login extends AppCompatActivity {
                 if (attempt == 4) {
                     Toast.makeText(getApplicationContext(), "Login limits exceeded please reset password", Toast.LENGTH_LONG).show();
                 } else {
-                    String username = Username.getText().toString().trim();
                     String password = Password.getText().toString().trim();
                     String email = Email.getText().toString().trim();
 
-                    if (TextUtils.isEmpty(username)) {
-                        Email.setError("Username is Required.");
-                        return;
-                    }
 
                     if (TextUtils.isEmpty(password)) {
                         Password.setError("Password is Required.");
@@ -73,7 +67,7 @@ public class Login extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
 
                     // authenticate the user
-                    fAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
