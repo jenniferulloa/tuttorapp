@@ -120,7 +120,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.612"
-        app:srcCompat="@drawable/teacher2" />
+        app:srcCompat="@drawable/femalebuns" />
 
     <TextView
         android:id="@+id/textView_TutorName6"
@@ -158,7 +158,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.456"
-        app:srcCompat="@drawable/teacher" />
+        app:srcCompat="@drawable/malebeard" />
 
     <TextView
         android:id="@+id/textView_TutorClasses7"
@@ -196,7 +196,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771"
-        app:srcCompat="@drawable/teacher" />
+        app:srcCompat="@drawable/malemoustache" />
 
     <TextView
         android:id="@+id/textView"
