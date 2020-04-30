@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,8 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
     EditText Username,Password,Email;
-    Button LoginButton;
-    TextView CreateButton,ForgotPassword;
+    Button LoginButton, createText, ForgotPassword;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     int attempt = 0;
@@ -36,7 +34,7 @@ public class Login extends AppCompatActivity {
         LoginButton = findViewById(R.id.LoginButton);
         progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
-        CreateButton = findViewById(R.id.createText);
+        Button createText = findViewById(R.id.createText);
         ForgotPassword = findViewById(R.id.ForgotPassword);
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +82,7 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-        CreateButton.setOnClickListener(new View.OnClickListener() {
+        createText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Registration.class));

@@ -33,8 +33,8 @@ import androidx.core.content.ContextCompat;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_communication);
 
-            number = (EditText) findViewById(R.id.phoneText);
-            message = (EditText) findViewById(R.id.message);
+            number = findViewById(R.id.phoneText);
+            message = findViewById(R.id.message);
             send_M = findViewById(R.id.sendButtonMessage);
             email = findViewById(R.id.email);
             send_E = findViewById(R.id.sendButtonEmail);
@@ -59,21 +59,33 @@ import androidx.core.content.ContextCompat;
                                           }
                                       }
             );
+            callButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onCall(v);
 
+                }
+            });
+
+        }
+
+        public void onCall(View view) {
+            Intent i = new Intent(Intent.ACTION_CALL);
+            i.setData(Uri.parse("tel:" + number.getText().toString()));
+            startActivity(i);
+//            Intent intent = new Intent(Intent.ACTION_CALL);
+//            intent.setData(Uri.parse(number.getText().toString()));
+//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//                startActivity(intent);
+//            }
+//            else {
+//                Intent callIntent = new Intent(Intent.ACTION_CALL);
+//
+//                startActivity(intent);
 
         }
 
-        public void onCall(View v) {
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("cell:"+number.getText().toString()));
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
-            }
-            startActivity(intent);
 
-
-
-        }
         public void onSend(View view){
             String phoneNumber = number.getText().toString();
             String smsMessage = message.getText().toString();

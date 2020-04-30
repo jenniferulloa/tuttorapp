@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="374dp"
+        android:layout_height="19dp"
         android:text="Elementary, Secondary and High School Reading and Writing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/High"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jorge Avila-"
+        android:text="Olivia Coleman-"
         android:textColor="#FF9800"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
         android:id="@+id/Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Richard Johnson-"
+        android:text="Mary Smith-"
         android:textAlignment="center"
         android:textColor="#FF9800"
         android:textSize="24sp"
@@ -52,7 +52,7 @@
         android:id="@+id/Elementary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="George Washington-"
+        android:text="Cindy Lam-"
         android:textAlignment="center"
         android:textColor="#FF9800"
         android:textSize="24sp"
@@ -116,5 +116,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.484" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="98dp"
+        android:layout_height="92dp"
+        app:srcCompat="@drawable/femalebuns"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="119dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="110dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/femaleglasses"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="116dp"
+        android:layout_height="108dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584"
+        app:srcCompat="@drawable/femalehoops" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
